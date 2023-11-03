@@ -1,2 +1,74 @@
-cyberpunk_mobile
-cyberpunk_web
+.DS_Store
+
+# cyberpunk_web
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+cyberpunk_web/node_modules
+cyberpunk_web/.pnp
+cyberpunk_web/.pnp.js
+
+# testing
+cyberpunk_web/coverage
+
+# production
+cyberpunk_web/build
+
+# misc
+cyberpunk_web/.DS_Store
+cyberpunk_web/.env.local
+cyberpunk_web/.env.development.local
+cyberpunk_web/.env.test.local
+cyberpunk_web/.env.production.local
+
+cyberpunk_web/npm-debug.log*
+cyberpunk_web/yarn-debug.log*
+cyberpunk_web/yarn-error.log*
+
+cyberpunk_mobile/*.hmap
+cyberpunk_mobile/*.ipa
+cyberpunk_mobile/*.xcuserstate
+cyberpunk_mobile/ios/.xcode.env.local
+
+# Android/IntelliJ
+#
+cyberpunk_mobile/build/
+cyberpunk_mobile/.idea
+cyberpunk_mobile/.gradle
+cyberpunk_mobile/local.properties
+cyberpunk_mobile/*.iml
+cyberpunk_mobile/*.hprof
+cyberpunk_mobile/.cxx/
+cyberpunk_mobile/*.keystore
+cyberpunk_mobile/!debug.keystore
+
+# node.js
+#
+cyberpunk_mobile/node_modules/
+cyberpunk_mobile/npm-debug.log
+cyberpunk_mobile/yarn-error.log
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+cyberpunk_mobile/**/fastlane/report.xml
+cyberpunk_mobile/**/fastlane/Preview.html
+cyberpunk_mobile/**/fastlane/screenshots
+cyberpunk_mobile/**/fastlane/test_output
+
+# Bundle artifact
+cyberpunk_mobile/*.jsbundle
+
+# Ruby / CocoaPods
+cyberpunk_mobile/ios/Pods/
+cyberpunk_mobile/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+cyberpunk_mobile/.metro-health-check*
+
+# testing
+cyberpunk_mobile/coverage
