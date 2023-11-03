@@ -1,4 +1,11 @@
-import {pixels, rem} from './styles_helpers';
+import {
+  pixels,
+  rem,
+  iosStyles,
+  androidStyles,
+  mobileStyles,
+  webStyles,
+} from './styles_helpers';
 
 const styles: StyleProp<ViewStyle> = {
   container: {
@@ -13,6 +20,24 @@ const styles: StyleProp<ViewStyle> = {
     width: pixels(160),
     height: rem(10),
     backgroundColor: 'blue',
+    borderWidth: pixels(10),
+
+    ...iosStyles({
+      borderColor: 'orange',
+    }),
+
+    ...androidStyles({
+      borderColor: 'green',
+    }),
+
+    ...webStyles({
+      borderColor: 'purple',
+      borderStyle: 'solid',
+    }),
+
+    ...mobileStyles({
+      borderStyle: 'dotted',
+    }),
   }
 };
 
