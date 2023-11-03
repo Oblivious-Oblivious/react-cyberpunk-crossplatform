@@ -1,31 +1,17 @@
-function currentOS() {
-  let os = '';
-
-  try {
-    const {Platform} = require('react-native');
-    os = Platform.OS;
-  }
-  catch(e) {
-    os = 'website';
-  }
-
-  return os;
-}
+import {currentOS} from '../cyberpunk_mobile/os_finder';
 
 export function pixels(value: number) {
-  if(currentOS() === 'website') {
+  if (currentOS() === 'website') {
     return `${value}px`;
-  }
-  else {
+  } else {
     return value;
   }
 }
 
 export function rem(value: number) {
-  if(currentOS() === 'website') {
+  if (currentOS() === 'website') {
     return `${value}rem`;
-  }
-  else {
+  } else {
     return value * 16;
   }
 }
