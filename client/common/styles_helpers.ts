@@ -22,28 +22,28 @@ export function rem(value: number) {
 //   }
 // }
 
-export function iosStyles(styles: StyleProp<ViewStyle>) {
+export function iosStyles(styles: any) {
   if (currentOS() === 'ios') {
     return styles;
   } else {
     return {};
   }
 }
-export function androidStyles(styles: StyleProp<ViewStyle>) {
+export function androidStyles(styles: any) {
   if (currentOS() === 'android') {
     return styles;
   } else {
     return {};
   }
 }
-export function mobileStyles(styles: StyleProp<ViewStyle>) {
+export function mobileStyles(styles: any) {
   if (currentOS() === 'ios' || currentOS() === 'android') {
     return styles;
   } else {
     return {};
   }
 }
-export function webStyles(styles: StyleProp<ViewStyle>) {
+export function webStyles(styles: any) {
   if (currentOS() === 'website') {
     return styles;
   } else {

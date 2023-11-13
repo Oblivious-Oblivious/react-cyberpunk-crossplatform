@@ -6,7 +6,7 @@ import {
   webStyles,
 } from './styles_helpers';
 
-const styles: StyleProp<ViewStyle> = {
+const styles: any = {
   container: {
     flex: 1,
     display: 'flex',
