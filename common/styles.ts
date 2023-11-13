@@ -1,5 +1,4 @@
 import {
-  pixels,
   rem,
   iosStyles,
   androidStyles,
@@ -17,7 +16,7 @@ const styles: StyleProp<ViewStyle> = {
   },
 
   box: {
-    width: pixels(160),
+    width: 160,
     height: rem(10),
     backgroundColor: 'blue',
     borderWidth: pixels(10),

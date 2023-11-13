@@ -1,13 +1,5 @@
 import {currentOS} from '../cyberpunk_mobile/os_finder';
 
-export function pixels(value: number) {
-  if (currentOS() === 'website') {
-    return `${value}px`;
-  } else {
-    return value;
-  }
-}
-
 export function rem(value: number) {
   if (currentOS() === 'website') {
     return `${value}rem`;
@@ -15,6 +7,20 @@ export function rem(value: number) {
     return value * 16;
   }
 }
+// export function vh(value: number) {
+//   if (currentOS() === 'website') {
+//     return `${value}vh`;
+//   } else {
+//     return value * ??;
+//   }
+// }
+// export function vw(value: number) {
+//   if (currentOS() === 'website') {
+//     return `${value}vw`;
+//   } else {
+//     return value * ??;
+//   }
+// }
 
 export function iosStyles(styles: StyleProp<ViewStyle>) {
   if (currentOS() === 'ios') {
