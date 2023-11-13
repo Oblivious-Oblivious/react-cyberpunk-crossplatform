@@ -1,4 +1,4 @@
-import styles from '../../common/styles';
+import styles from '../../../common/styles';
 
 function App() {
   return (
