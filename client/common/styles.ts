@@ -42,7 +42,7 @@ const styles: StyleProp<ViewStyle> = {
   },
 
   text: {
-    fontSize: 48,
+    fontSize: 42,
     fontWeight: 'bold',
     color: 'black',
     textAlign: 'center',

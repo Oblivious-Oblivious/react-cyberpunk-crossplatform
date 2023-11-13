@@ -1,4 +1,4 @@
-import {currentOS} from '../cyberpunk_mobile/os_finder';
+import {currentOS} from '../mobile/os_finder';
 
 export function rem(value: number) {
   if (currentOS() === 'website') {

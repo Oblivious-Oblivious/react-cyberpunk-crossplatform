@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-import styles from '../../../app/styles';
+import styles from '../../common/styles';
 
 export function Box({text = ''}) {
   return (
