@@ -18,8 +18,10 @@ const styles: StyleProp<ViewStyle> = {
   box: {
     width: 160,
     height: rem(10),
-    backgroundColor: 'blue',
-    borderWidth: pixels(10),
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'lightblue',
+    borderWidth: 10,
 
     ...iosStyles({
       borderColor: 'orange',
@@ -37,7 +39,14 @@ const styles: StyleProp<ViewStyle> = {
     ...mobileStyles({
       borderStyle: 'dotted',
     }),
-  }
+  },
+
+  text: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: 'black',
+    textAlign: 'center',
+  },
 };
 
 export default styles;
