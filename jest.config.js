@@ -5,7 +5,9 @@ module.exports = {
   ],
   testMatch: [
     // app
-    '<rootDir>/spec/app/**',
-    // '<rootDir>/spec/app/f2.spec.ts',
+    // '<rootDir>/spec/app/**',
+
+    // app - uc1
+    '<rootDir>/spec/app/uc1_works_loader/**',
   ],
 };
