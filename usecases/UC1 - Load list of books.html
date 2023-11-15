@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>UC1 - Load list of books</title>
+</head>
+<body>
+  <div class="container">
+    <div class="name">UC1 - Load list of books</div>
+
+    <div class="data">
+      <i>Data:</i>
+      <ul>
+        <li>&lt;Books HTTP Endpoint&gt;</li>
+      </ul>
+    </div>
+
+    <div class="primary-course">
+      <i>Main Flow:</i>
+      <ol>
+        <li>User taps the main screen tab.</li>
+        <li>System sends a request to the endpoint.</li>
+        <li>System retrieves data and showcases in the screen.</li>
+      </ol>
+    </div>
+
+    <div class="exception-course">
+      <i>Invalid Endpoint</i>
+      <ol>
+        <li>Instead of a list, screen displays a single message notifying the user about missing data.</li>
+        <li>Message should be: 'Could not receive list of books'.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
