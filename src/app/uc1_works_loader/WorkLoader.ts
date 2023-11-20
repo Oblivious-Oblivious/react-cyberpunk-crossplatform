@@ -6,8 +6,6 @@ export class WorkLoader implements Loader {
   works: Work[] = [];
 
   async loadWorks(): Promise<Work[]> {
-    this.works.push(Work.create());
-
     try {
       const response = (await axios.get("https://cyberpunk-data-host.dreamnotexpiring.com"));
       response.data.cyberpunk_works.forEach((work: any) => {

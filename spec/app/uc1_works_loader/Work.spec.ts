@@ -4,10 +4,10 @@ import {describe} from "../../spec_helpers";
 describe('Work', () => {
   it('creates a new work with empty information', () => {
     const work = Work.create();
-    expect(work.name).toBe('');
-    expect(work.creator).toBe('');
+    expect(work.name).toBe('work');
+    expect(work.creator).toBe('N.S');
     expect(work.year).toBe(0);
-    expect(work.cover).toBe('');
+    expect(work.cover).toBe('error.png');
   });
 
   it('creates a work with title and creator but not year and cover', () => {
@@ -15,7 +15,7 @@ describe('Work', () => {
     expect(work.name).toBe('name');
     expect(work.creator).toBe('creator');
     expect(work.year).toBe(0);
-    expect(work.cover).toBe('');
+    expect(work.cover).toBe('error.png');
   });
 
   it('creates a work with all valid information', () => {

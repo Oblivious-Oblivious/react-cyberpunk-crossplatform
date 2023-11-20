@@ -11,7 +11,7 @@ export class Work {
     this.cover = cover;
   }
 
-  static create({name = '', creator = '', year = 0, cover = ''} = {}): Work {
+  static create({name = 'work', creator = 'N.S', year = 0, cover = 'error.png'} = {}): Work {
     return new Work(name, creator, year, cover);
   }
 
