@@ -5,7 +5,7 @@ describe('WorkLoader', () => {
   it('contains an initally empty works array', () => {
     const w = new WorkLoader();
     expect(w.works.length).toBe(0);
-  })
+  });
 
   it('retrieves a json list with all cyberpunk work information', async () => {
     const w = new WorkLoader();
