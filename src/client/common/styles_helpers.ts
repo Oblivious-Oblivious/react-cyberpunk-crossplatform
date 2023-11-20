@@ -7,20 +7,6 @@ export function rem(value: number) {
     return value * 16;
   }
 }
-// export function vh(value: number) {
-//   if (currentOS() === 'website') {
-//     return `${value}vh`;
-//   } else {
-//     return value * ??;
-//   }
-// }
-// export function vw(value: number) {
-//   if (currentOS() === 'website') {
-//     return `${value}vw`;
-//   } else {
-//     return value * ??;
-//   }
-// }
 
 export function iosStyles(styles: any) {
   if (currentOS() === 'ios') {

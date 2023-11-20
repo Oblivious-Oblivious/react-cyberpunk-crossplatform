@@ -16,6 +16,7 @@ const styles: any = {
   },
 
   box: {
+    display: 'flex',
     width: 160,
     height: rem(10),
     alignItems: 'center',

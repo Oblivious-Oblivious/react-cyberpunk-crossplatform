@@ -1,12 +1,7 @@
-import styles from '../../common/styles';
+import {Work} from './uc1_works_loader/Work';
 
 function App() {
-  return (
-    <div style={styles.container}>
-      <div style={styles.box}>
-      </div>
-    </div>
-  );
+  return <Work text="WEB" />;
 }
 
 export default App;
