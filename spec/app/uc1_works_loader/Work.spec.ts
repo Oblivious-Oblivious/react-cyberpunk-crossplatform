@@ -1,5 +1,5 @@
 import {Work} from "../../../src/app/uc1_works_loader/Work";
-import {describe} from "../../spec_helpers";
+import {context, describe} from "../../spec_helpers";
 
 describe('Work', () => {
   it('creates a new work with empty information', () => {
@@ -41,123 +41,151 @@ describe('Work', () => {
     expect(work.isValid()).toBe(true);
   });
 
-  it('makes sure that name should be at least 3 characters', () => {
-    const work1 = Work.create({
-      name: `Vu`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+  context('on name being at least 3 characters', () => {
+    it('fails because the name is too short', () => {
+      const work1 = Work.create({
+        name: `Vu`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+      });
+      expect(work1.isValid()).toBe(false);
     });
-    expect(work1.isValid()).toBe(false);
 
-    const work2 = Work.create({
-      name: `Vul`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+    it('succeeds when name is exactly 3 characters', () => {
+      const work2 = Work.create({
+        name: `Vul`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+      });
+      expect(work2.isValid()).toBe(true);
     });
-    expect(work2.isValid()).toBe(true);
 
-    const work3 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+    it('suceeds when name is more than 3 characters', () => {
+      const work3 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work3.isValid()).toBe(true);
     });
-    expect(work3.isValid()).toBe(true);
   });
 
-  it('makes sure that creator should be at least 1 character long', () => {
-    const work1 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: '',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+  context('on creator being at least 1 character long', () => {
+    it('fails because creator is less than 1 character long', () => {
+      const work1 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: '',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work1.isValid()).toBe(false);
     });
-    expect(work1.isValid()).toBe(false);
 
-    const work2 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'V',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+    it('succeeds when creator is 1 character long or more', () => {
+      const work2 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'V',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work2.isValid()).toBe(true);
     });
-    expect(work2.isValid()).toBe(true);
   });
 
-  it('makes sure that year should be at least -5000', () => {
-    const work1 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: -6000,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+  context('on year being at least -5000', () => {
+    it('fails because year is less than -5000', () => {
+      const work1 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: -6000,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work1.isValid()).toBe(false);
     });
-    expect(work1.isValid()).toBe(false);
 
-    const work2 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: -5001,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+    it('fails when year is -5001', () => {
+      const work2 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: -5001,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work2.isValid()).toBe(false);
     });
-    expect(work2.isValid()).toBe(false);
 
-    const work3 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: -5000,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+    it('succeeds if year -5000', () => {
+      const work3 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: -5000,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work3.isValid()).toBe(true);
     });
-    expect(work3.isValid()).toBe(true);
 
-    const work4 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+    it('succeeds if year is greater than 1953', () => {
+      const work4 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      });
+      expect(work4.isValid()).toBe(true);
     });
-    expect(work4.isValid()).toBe(true);
   });
 
-  it('makes sure that cover is an image of .png, or .jpg', () => {
-    const work1 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: '',
+  context('on image being either .png or .jpg', () => {
+    it('fails when image is an empty string', () => {
+      const work1 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: '',
+      });
+      expect(work1.isValid()).toBe(false);
     });
-    expect(work1.isValid()).toBe(false);
 
-    const work2 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'gqwgwgqwv',
+    it('fails when image does not end with.png or.jpg', () => {
+      const work2 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'gqwgwgqwv',
+      });
+      expect(work2.isValid()).toBe(false);
     });
-    expect(work2.isValid()).toBe(false);
 
-    const work4 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'jpg',
+    it('fails if image ends with `jpg` without a dot', () => {
+      const work4 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'jpg',
+      });
+      expect(work4.isValid()).toBe(false);
     });
-    expect(work4.isValid()).toBe(false);
 
-    const work5 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'something.png'
+    it('succeeds on a valid png link', () => {
+      const work5 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'something.png'
+      });
+      expect(work5.isValid()).toBe(true);
     });
-    expect(work5.isValid()).toBe(true);
 
-    const work6 = Work.create({
-      name: `Vulkan's Hammer`,
-      creator: 'Philip K. Dick',
-      year: 1953,
-      cover: 'something.jpg'
+    it('succeeds on a valid jpg link', () => {
+      const work6 = Work.create({
+        name: `Vulkan's Hammer`,
+        creator: 'Philip K. Dick',
+        year: 1953,
+        cover: 'something.jpg'
+      });
+      expect(work6.isValid()).toBe(true);
     });
-    expect(work6.isValid()).toBe(true);
   });
 });
