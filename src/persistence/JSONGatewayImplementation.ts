@@ -1,8 +1,8 @@
-import {Loader} from "./Loader.i";
-import {Work} from "./Work";
+import {PersistenceGateway} from "./PersistenceGateway.i";
+import {Work} from "../app/uc1_works_loader/Work";
 import axios from 'axios';
 
-export class WorkLoader implements Loader {
+export class JSONGatewayImplementation implements PersistenceGateway {
   works: Work[] = [];
 
   async loadWorks(): Promise<Work[]> {
