@@ -5,11 +5,11 @@ module.exports = {
   ],
   testMatch: [
     // app
-    // '<rootDir>/spec/app/**',
+    // '<rootDir>/src/app/**/**.spec.ts',
 
     // app - uc1
-    '<rootDir>/spec/app/uc1_works_loader/**',
-      // '<rootDir>/spec/app/uc1_works_loader/Work.spec.ts',
-      // '<rootDir>/spec/app/uc1_works_loader/WorkLoader.spec.ts',
+    '<rootDir>/src/app/uc1_works_loader/**.spec.ts',
+      // '<rootDir>/src/app/uc1_works_loader/Work.spec.ts',
+      // '<rootDir>/src/app/uc1_works_loader/WorkLoader.spec.ts',
   ],
 };

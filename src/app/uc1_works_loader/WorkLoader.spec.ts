@@ -1,5 +1,5 @@
-import {WorkLoaderFactory} from "../../../src/app/uc1_works_loader/WorkLoaderFactory";
-import {context, describe} from "../../spec_helpers";
+import {WorkLoaderFactory} from "./WorkLoaderFactory";
+import {context, describe} from "../../../spec_helpers";
 
 describe('WorkLoaderFactory', () => {
   context('checking all types of gateways', () => {

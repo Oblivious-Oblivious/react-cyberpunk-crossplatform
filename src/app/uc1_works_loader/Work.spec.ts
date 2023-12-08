@@ -1,5 +1,5 @@
-import {Work} from "../../../src/app/uc1_works_loader/Work";
-import {context, describe} from "../../spec_helpers";
+import {Work} from "./Work";
+import {context, describe} from "../../../spec_helpers";
 
 describe('Work', () => {
   it('creates a new work with empty information', () => {
