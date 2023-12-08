@@ -1,13 +1,13 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-import styles from '../../../common/styles';
+import {work_styles} from '../../../common/uc1_works_loader';
 
 export function Work({text = ''}) {
   return (
-    <View style={styles.container}>
-      <View style={styles.box}>
-        <Text style={styles.text}>{text}</Text>
+    <View style={work_styles.container}>
+      <View style={work_styles.box}>
+        <Text style={work_styles.text}>{text}</Text>
       </View>
     </View>
   );

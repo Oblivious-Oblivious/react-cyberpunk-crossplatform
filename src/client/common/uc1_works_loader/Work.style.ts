@@ -1,20 +1,12 @@
 import {
   rem,
-  iosStyles,
-  androidStyles,
-  mobileStyles,
-  webStyles,
-} from './styles_helpers';
+  ios_styles,
+  android_styles,
+  mobile_styles,
+  web_styles,
+} from '../styles_helpers';
 
-const styles: any = {
-  container: {
-    flex: 1,
-    display: 'flex',
-    height: '100vh',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
+export const work_styles: any = {
   box: {
     display: 'flex',
     width: 160,
@@ -24,22 +16,30 @@ const styles: any = {
     backgroundColor: 'lightblue',
     borderWidth: 10,
 
-    ...iosStyles({
+    ...ios_styles({
       borderColor: 'orange',
     }),
 
-    ...androidStyles({
+    ...android_styles({
       borderColor: 'green',
     }),
 
-    ...webStyles({
+    ...web_styles({
       borderColor: 'purple',
       borderStyle: 'solid',
     }),
 
-    ...mobileStyles({
+    ...mobile_styles({
       borderStyle: 'dotted',
     }),
+  },
+
+  container: {
+    flex: 1,
+    display: 'flex',
+    height: '100vh',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   text: {
@@ -49,5 +49,3 @@ const styles: any = {
     textAlign: 'center',
   },
 };
-
-export default styles;

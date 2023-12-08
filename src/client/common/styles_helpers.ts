@@ -8,28 +8,28 @@ export function rem(value: number) {
   }
 }
 
-export function iosStyles(styles: any) {
+export function ios_styles(styles: any) {
   if (currentOS() === 'ios') {
     return styles;
   } else {
     return {};
   }
 }
-export function androidStyles(styles: any) {
+export function android_styles(styles: any) {
   if (currentOS() === 'android') {
     return styles;
   } else {
     return {};
   }
 }
-export function mobileStyles(styles: any) {
+export function mobile_styles(styles: any) {
   if (currentOS() === 'ios' || currentOS() === 'android') {
     return styles;
   } else {
     return {};
   }
 }
-export function webStyles(styles: any) {
+export function web_styles(styles: any) {
   if (currentOS() === 'website') {
     return styles;
   } else {
