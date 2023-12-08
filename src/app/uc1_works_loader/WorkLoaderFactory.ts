@@ -1,7 +1,7 @@
-import {FirebaseGatewayImplementation} from "../../persistence/FirebaseGatewayImplementation";
-import {JSONGatewayImplementation} from "../../persistence/JSONGatewayImplementation";
-import {MockGatewayImplementation} from "../../persistence/MockGatewayImplementation";
-import {RedisGatewayImplementation} from "../../persistence/RedisGatewayImplementation";
+import {FirebaseGatewayImplementation} from '../../persistence/FirebaseGatewayImplementation';
+import {JSONGatewayImplementation} from '../../persistence/JSONGatewayImplementation';
+import {MockGatewayImplementation} from '../../persistence/MockGatewayImplementation';
+import {RedisGatewayImplementation} from '../../persistence/RedisGatewayImplementation';
 
 export const WorkLoaderFactory = (type = 'firebase') => {
   const firebaseGateway = new FirebaseGatewayImplementation();

@@ -1,5 +1,5 @@
-import {PersistenceGateway} from "./PersistenceGateway.i";
-import {Work} from "../app/uc1_works_loader/Work";
+import {PersistenceGateway} from './PersistenceGateway.i';
+import {Work} from '../app/uc1_works_loader/Work';
 import axios from 'axios';
 
 export class JSONGatewayImplementation implements PersistenceGateway {
@@ -7,7 +7,7 @@ export class JSONGatewayImplementation implements PersistenceGateway {
 
   async loadWorks(): Promise<Work[]> {
     try {
-      const response = (await axios.get("https://cyberpunk-data-host.dreamnotexpiring.com"));
+      const response = (await axios.get('https://cyberpunk-data-host.dreamnotexpiring.com'));
       response.data.cyberpunk_works.forEach((work: any) => {
         this.works.push(Work.create({
           name: work.name,
@@ -17,7 +17,7 @@ export class JSONGatewayImplementation implements PersistenceGateway {
         }));
       });
     } catch (err) {
-      console.log("ERROR: " + err);
+      console.log('ERROR: ' + err);
     }
 
     return this.works;
