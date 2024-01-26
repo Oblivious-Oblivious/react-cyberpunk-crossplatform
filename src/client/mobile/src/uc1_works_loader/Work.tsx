@@ -3,6 +3,7 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 
 import {work_styles} from '../../../common/uc1_works_loader';
+import {A2AView} from '../components/A2AViewMobile';
 
 function Spacer({height = 16}) {
   return (
@@ -28,7 +29,7 @@ function WorkTitle({text = ''}) {
 
 function WorkSubtitle({text = ''}) {
   return (
-    <View
+    <A2AView
       style={{
         paddingRight: 24,
       }}>
@@ -39,7 +40,7 @@ function WorkSubtitle({text = ''}) {
         }}>
         {text}
       </Text>
-    </View>
+    </A2AView>
   );
 }
 
