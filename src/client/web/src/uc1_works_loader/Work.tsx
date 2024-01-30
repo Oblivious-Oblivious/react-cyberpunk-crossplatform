@@ -1,5 +1,5 @@
 import {work_styles} from '../../../common/uc1_works_loader';
-import {A2AView} from '../../../common/components/A2AViewWeb';
+import {A2AView} from '../../../common/components/A2AView';
 
 export function Work({text = ''}) {
   return (

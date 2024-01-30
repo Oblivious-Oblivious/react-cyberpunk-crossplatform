@@ -1,13 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text} from 'react-native';
 
 import {work_styles} from '../../../common/uc1_works_loader';
-import {A2AView} from '../components/A2AViewMobile';
+import {A2AView} from '../../../common/components/A2AView';
 
 function Spacer({height = 16}) {
   return (
-    <View
+    <A2AView
       style={{
         marginVertical: height / 2,
       }}
@@ -46,7 +46,7 @@ function WorkSubtitle({text = ''}) {
 
 function WorkCreatorQuote({quote = ''}) {
   return (
-    <View
+    <A2AView
       style={{
         alignItems: 'flex-end',
         paddingRight: 24,
@@ -58,17 +58,17 @@ function WorkCreatorQuote({quote = ''}) {
         }}>
         {`- ${quote}`}
       </Text>
-    </View>
+    </A2AView>
   );
 }
 
 export function Work({text = ''}) {
   return (
-    <View
+    <A2AView
       style={{
         left: 16,
       }}>
-      <View
+      <A2AView
         style={{
           position: 'absolute',
           top: 15,
@@ -91,21 +91,20 @@ export function Work({text = ''}) {
             uri: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
           }}
         />
-        {/* </View> */}
-      </View>
-      <View
+      </A2AView>
+      <A2AView
         style={{
           ...work_styles.box,
           flexDirection: 'row',
           paddingVertical: 24,
         }}>
-        <View
+        <A2AView
           style={{
             flex: 3,
           }}
         />
 
-        <View
+        <A2AView
           style={{
             flex: 10,
           }}>
@@ -118,8 +117,8 @@ export function Work({text = ''}) {
           />
           <Spacer height={4} />
           <WorkCreatorQuote quote={'Philip K. Dick'} />
-        </View>
-      </View>
-    </View>
+        </A2AView>
+      </A2AView>
+    </A2AView>
   );
 }
