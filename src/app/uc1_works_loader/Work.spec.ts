@@ -1,5 +1,5 @@
-import {Work} from "./Work";
-import {context, describe} from "../../../spec_helpers";
+import {context, describe} from '../../../spec_helpers';
+import {Work} from './Work';
 
 describe('Work', () => {
   it('creates a new work with empty information', () => {
@@ -36,7 +36,8 @@ describe('Work', () => {
       name: `Vulcan's Hammer`,
       creator: 'Philip K. Dick',
       year: 1953,
-      cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+      cover:
+        'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
     });
     expect(work.isValid()).toBe(true);
   });
@@ -47,7 +48,8 @@ describe('Work', () => {
         name: `Vu`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work1.isValid()).toBe(false);
     });
@@ -57,7 +59,8 @@ describe('Work', () => {
         name: `Vul`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg'
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work2.isValid()).toBe(true);
     });
@@ -67,7 +70,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work3.isValid()).toBe(true);
     });
@@ -79,7 +83,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: '',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work1.isValid()).toBe(false);
     });
@@ -89,7 +94,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'V',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work2.isValid()).toBe(true);
     });
@@ -101,7 +107,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: -6000,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work1.isValid()).toBe(false);
     });
@@ -111,7 +118,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: -5001,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work2.isValid()).toBe(false);
     });
@@ -121,7 +129,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: -5000,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work3.isValid()).toBe(true);
     });
@@ -131,7 +140,8 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        cover:
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
       });
       expect(work4.isValid()).toBe(true);
     });
@@ -173,7 +183,7 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'something.png'
+        cover: 'something.png',
       });
       expect(work5.isValid()).toBe(true);
     });
@@ -183,7 +193,7 @@ describe('Work', () => {
         name: `Vulkan's Hammer`,
         creator: 'Philip K. Dick',
         year: 1953,
-        cover: 'something.jpg'
+        cover: 'something.jpg',
       });
       expect(work6.isValid()).toBe(true);
     });

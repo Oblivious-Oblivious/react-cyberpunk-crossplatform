@@ -2,8 +2,8 @@
 import React from 'react';
 import {Image, Text} from 'react-native';
 
-import {work_styles} from '../../../common/uc1_works_loader';
 import {A2AView} from '../../../common/components/A2AView';
+import {work_styles} from '../../../common/uc1_works_loader';
 
 function Spacer({height = 16}) {
   return (

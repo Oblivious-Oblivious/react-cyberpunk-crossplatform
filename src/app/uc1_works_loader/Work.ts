@@ -11,15 +11,22 @@ export class Work {
     this.cover = cover;
   }
 
-  static create({name = 'work', creator = 'N.S', year = 0, cover = 'error.png'} = {}): Work {
+  static create({
+    name = 'work',
+    creator = 'N.S',
+    year = 0,
+    cover = 'error.png',
+  } = {}): Work {
     return new Work(name, creator, year, cover);
   }
 
   isValid(): boolean {
-    return this.name.length > 2 &&
+    return (
+      this.name.length > 2 &&
       this.creator.length > 0 &&
       this.year >= -5000 &&
       this.cover.length > 0 &&
-      (this.cover.endsWith('.png') || this.cover.endsWith('.jpg'));
+      (this.cover.endsWith('.png') || this.cover.endsWith('.jpg'))
+    );
   }
-};
+}
