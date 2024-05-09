@@ -1,5 +1,5 @@
-import {WorkLoaderFactory} from './WorkLoaderFactory';
 import {context, describe} from '../../../spec_helpers';
+import {WorkLoaderFactory} from './WorkLoaderFactory';
 
 describe('WorkLoaderFactory', () => {
   context('checking all types of gateways', () => {
@@ -25,10 +25,12 @@ describe('WorkLoaderFactory', () => {
       it('checks whether the first work is vulkans hammer', async () => {
         const w = WorkLoaderFactory(type);
         await w.loadWorks();
-        expect(w.works[0].name).toBe('Vulcan\'s Hammer');
+        expect(w.works[0].name).toBe("Vulcan's Hammer");
         expect(w.works[0].creator).toBe('Philip K. Dick');
         expect(w.works[0].year).toBe(1953);
-        expect(w.works[0].cover).toBe('https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg');
+        expect(w.works[0].cover).toBe(
+          'https://cyberpunk-data-host.dreamnotexpiring.com/images/1953VulcansHammer.jpg',
+        );
       });
     });
   });
